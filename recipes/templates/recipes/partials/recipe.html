@@ -1,7 +1,7 @@
 <div class="recipe recipe-list-item">
     <div class="recipe-cover">
         <a href="{% url 'recipes:recipe' recipe.id %}">        
-            <img src="{{ recipe.cover.url }}" alt="Temporário">
+            <img src="{{ recipe.cover }}" alt="Temporário">
         </a>
     </div>
     <div class="recipe-title-container">
@@ -66,10 +66,10 @@
     {% endif %}
     {% if is_detail_page is True %}
         <div class="preparation-steps">
-            {% if recipe.preparetion_step_is_html is True %}
-            {{ recipe.preparetion_step|safe }}
+            {% if recipe.preparation_steps_is_html is True %}
+            {{ recipe.preparation_steps|safe }}
             {% else %}
-                {{ recipe.preparetion_step|linebreaksbr }}
+                {{ recipe.preparation_steps|linebreaksbr }}
             {% endif %}
         </div>
     {% endif %}
